@@ -7,19 +7,25 @@ const getPeople = async (req = request, res = response) => {
 }
 
 const postPeople = async (req = request, res = response) => {
-    const body = req.body
-    const people = new People(body)
+    const body = req.body;
+    const people = new People(body);
 
-    await people.save()
+    await people.save();
 
     res.json({
         people
     });
 }
 
-const updatePerson = (req = request, res = response) => {
+const updatePerson = async (req = request, res = response) => {
+    const { id } = req.params
+    const body = req.body;
+
+    const person = await People.findByIdAndUpdate(id, body);
+
     res.json({
-        people: ['update']
+        msg: 'Updated',
+        person
     });
 }
 
