@@ -28,7 +28,7 @@ const peopleSchema = Schema({
             positive: Number,
             negative: Number
         },
-        required: [true, 'lastUpdated obligatorio']
+        required: [true, 'votes obligatorio']
     }
 })
 
