@@ -7,7 +7,7 @@ router.get('/', getPeople);
 
 router.post('/', postPeople)
 
-router.put('/:id', updatePerson);
+router.put('/', updatePerson);
 
 
 module.exports = router;

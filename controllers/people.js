@@ -18,7 +18,7 @@ const postPeople = async (req = request, res = response) => {
 }
 
 const updatePerson = async (req = request, res = response) => {
-    const { id } = req.params
+    const { id } = req.query
     const body = req.body;
 
     const person = await People.findByIdAndUpdate(id, body);
